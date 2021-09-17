@@ -1,0 +1,26 @@
+{
+  "name": "note-goat-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --testTimeout 10000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielmunro/note-goat-tests.git"
+  },
+  "author": "Dan Munro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielmunro/note-goat-tests/issues"
+  },
+  "homepage": "https://github.com/danielmunro/note-goat-tests#readme",
+  "devDependencies": {
+    "axios": "^0.21.4",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1",
+    "supertest": "^6.1.6",
+    "unique-names-generator": "^4.6.0"
+  }
+}
