@@ -33,18 +33,4 @@ describe('Session routes', () => {
     // then
     expect(session.status).to.equal(200);
   });
-
-  it('DELETE /session success sanity check', async () => {
-    // setup
-    const username = randomName();
-    await createUser(username);
-    const response = await loginUser(username);
-    expect(getAccessTokenFromSetHeaders(response.headers['set-cookie'])).not.to.equal("");
-
-    // given
-    const session = await client.delete("/session");
-
-    expect(session.status).to.equal(200);
-    expect(getAccessTokenFromSetHeaders(session.headers['set-cookie'])).to.equal("");
-  });
 });
