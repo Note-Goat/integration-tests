@@ -26,21 +26,9 @@ async function loginUser(username) {
   return response;
 }
 
-function getAccessTokenFromSetHeaders(setHeaders) {
-  const headerLength = setHeaders.length;
-  for (let i = 0; i < headerLength; i++) {
-    const parts = setHeaders[i].split(";");
-    const headerValue = parts[0].split("=");
-    if (headerValue[0] === "access_token_cookie") {
-      return headerValue[1];
-    }
-  }
-}
-
 module.exports = {
   createUser,
   loginUser,
   randomName,
   client,
-  getAccessTokenFromSetHeaders,
 };

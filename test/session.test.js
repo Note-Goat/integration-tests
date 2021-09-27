@@ -1,4 +1,4 @@
-const {createUser, randomName, client, loginUser, getAccessTokenFromSetHeaders} = require("./helpers");
+const {createUser, randomName, client, loginUser} = require("./helpers");
 const expect = require("chai").expect;
 
 describe('Session routes', () => {
