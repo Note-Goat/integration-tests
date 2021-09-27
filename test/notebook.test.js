@@ -36,4 +36,29 @@ describe("Notebook routes", () => {
 
     expect(data[0].name).to.equal(name);
   });
+
+  it("can delete a notebook", async () => {
+    // setup
+    const name = randomName();
+
+    // given
+    await client.post("/notebook", { name, description: ""});
+
+    const notebook = await client.get("/notebook");
+
+    const data = notebook.data;
+
+    // when
+    const response = await client.delete(`/notebook/${data[0].uuid}`);
+
+    // then
+    expect(response.status).to.equal(200);
+
+    try {
+      await client.get(`/notebook/${data[0].uuid}`);
+      fail("expected error");
+    } catch(e) {
+      expect(e.response.status).to.equal(404);
+    }
+  });
 });
